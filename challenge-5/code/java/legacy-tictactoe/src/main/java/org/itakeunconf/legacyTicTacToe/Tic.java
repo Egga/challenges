@@ -1,24 +1,20 @@
 package org.itakeunconf.legacyTicTacToe;
 
 import java.io.IOException;
-import java.util.Date;
-import java.util.Random;
-import java.util.Scanner;
 
 public class Tic {
     private final UserInputService userInputService;
+    private final TirageFactory tirageFactory;
     int i, a;
     char[] tab = new char[10];
 
-    public Tic(UserInputService userInputService) {
+    public Tic(UserInputService userInputService, TirageFactory tirageFactory) {
         this.userInputService = userInputService;
+        this.tirageFactory = tirageFactory;
     }
 
     void choice() throws IOException {
-        float tirage = 0;
-        Random random = new Random(new Date().getTime());
-        random.nextFloat();
-        tirage = random.nextFloat();
+        float tirage = tirageFactory.getTirage();
 
         if (tirage < 0.5) {
             for (i = 1; i <= 9; i++) {

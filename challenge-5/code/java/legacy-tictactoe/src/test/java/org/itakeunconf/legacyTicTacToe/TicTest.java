@@ -13,7 +13,8 @@ public class TicTest {
     @Test
     public void itName() throws IOException {
         UserInputService inputService = mock(UserInputService.class);
-        Tic tic = new Tic(inputService);
+        TirageFactory tirageFactory = mock(TirageFactory.class);
+        Tic tic = new Tic(inputService, tirageFactory);
         when(inputService.nextInt()).thenReturn(1, 2, 3, 4, 5);
         tic.eval();
         assertThat(String.valueOf(tic.tab)).isEqualTo("o");

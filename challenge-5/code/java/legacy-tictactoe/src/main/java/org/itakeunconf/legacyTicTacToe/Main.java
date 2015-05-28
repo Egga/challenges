@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Tic tic = new Tic(new UserInputService(new Scanner(System.in)));
+        Tic tic = new Tic(new UserInputService(new Scanner(System.in)), new TirageFactory());
         try {
             tic.eval();
             for (int i = 1; i <= 9; i++) {
