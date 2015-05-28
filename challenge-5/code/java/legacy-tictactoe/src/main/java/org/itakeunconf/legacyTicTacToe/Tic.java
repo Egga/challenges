@@ -24,12 +24,12 @@ public class Tic {
             for (i = 1; i <= 9; i++) {
                 if (i % 2 != 0) {
                     System.out.print("player A:");
-                    a = userInputService.getScanner().nextInt();
+                    a = nextInt();
                     userInputService.getScanner().nextLine();
                     tab[a] = 'x';
                 } else {
                     System.out.print("player B:");
-                    a = userInputService.getScanner().nextInt();
+                    a = nextInt();
                     userInputService.getScanner().nextLine();
                     tab[a] = 'o';
                 }
@@ -40,17 +40,21 @@ public class Tic {
             for (i = 1; i <= 9; i++) {
                 if (i % 2 != 0) {
                     System.out.print("player B:");
-                    a = userInputService.getScanner().nextInt();
+                    a = nextInt();
                     userInputService.getScanner().nextLine();
                     tab[a] = 'o';
                 } else {
                     System.out.print("player A:");
-                    a = userInputService.getScanner().nextInt();
+                    a = nextInt();
                     userInputService.getScanner().nextLine();
                     tab[a] = 'x';
                 }
             }
         }
+    }
+
+    private int nextInt() {
+        return userInputService.getScanner().nextInt();
     }
 
     void eval() throws IOException {
