@@ -8,10 +8,10 @@ import java.util.Scanner;
 public class Tic {
     int i, a;
     char[] tab = new char[10];
-    Scanner scanner;
+    private Scanner scanner;
 
     public Tic(Scanner scanner) {
-        this.scanner = scanner;
+        this.setScanner(scanner);
     }
 
     void choice() throws IOException {
@@ -24,13 +24,13 @@ public class Tic {
             for (i = 1; i <= 9; i++) {
                 if (i % 2 != 0) {
                     System.out.print("player A:");
-                    a = scanner.nextInt();
-                    scanner.nextLine();
+                    a = getScanner().nextInt();
+                    getScanner().nextLine();
                     tab[a] = 'x';
                 } else {
                     System.out.print("player B:");
-                    a = scanner.nextInt();
-                    scanner.nextLine();
+                    a = getScanner().nextInt();
+                    getScanner().nextLine();
                     tab[a] = 'o';
                 }
             }
@@ -40,13 +40,13 @@ public class Tic {
             for (i = 1; i <= 9; i++) {
                 if (i % 2 != 0) {
                     System.out.print("player B:");
-                    a = scanner.nextInt();
-                    scanner.nextLine();
+                    a = getScanner().nextInt();
+                    getScanner().nextLine();
                     tab[a] = 'o';
                 } else {
                     System.out.print("player A:");
-                    a = scanner.nextInt();
-                    scanner.nextLine();
+                    a = getScanner().nextInt();
+                    getScanner().nextLine();
                     tab[a] = 'x';
                 }
             }
@@ -76,5 +76,13 @@ public class Tic {
                 (tab[3] == 'o') && (tab[5] == 'o') && (tab[7] == 'o'))
 
             System.out.println("\nthe winner is : player B\n");
+    }
+
+    public Scanner getScanner() {
+        return scanner;
+    }
+
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
     }
 }
