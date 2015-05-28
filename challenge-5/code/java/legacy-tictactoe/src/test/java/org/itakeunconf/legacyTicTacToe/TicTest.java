@@ -10,6 +10,8 @@ import static org.mockito.Mockito.when;
 
 public class TicTest {
 
+    public static final String STUPID_INVISIBLE_CHARACTER_AT_BEGINNING_OF_STRING = "\u0000";
+
     @Test
     public void itName() throws IOException {
         UserInputService inputService = mock(UserInputService.class);
@@ -18,6 +20,7 @@ public class TicTest {
         when(inputService.nextInt()).thenReturn(1, 2, 3, 4, 5, 6, 7, 8, 9);
         when(tirageFactory.getTirage()).thenReturn(0.1f);
         tic.eval();
-        assertThat(String.valueOf(tic.tab)).isEqualTo("xoxoxoxox");
+        String actual = String.valueOf (tic.tab);
+        assertThat(actual).isEqualTo(STUPID_INVISIBLE_CHARACTER_AT_BEGINNING_OF_STRING + "xoxoxoxox");
     }
 }
