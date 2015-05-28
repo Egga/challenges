@@ -1,6 +1,8 @@
 apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'idea'
+apply plugin: 'jacoco'
+
 
 mainClassName = "org.itakeunconf.legacyTicTacToe.Main"
 
@@ -22,4 +24,12 @@ dependencies {
 run {
     main = 'org.itakeunconf.legacyTicTacToe.Main'
     standardInput = System.in
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
+    }
 }
