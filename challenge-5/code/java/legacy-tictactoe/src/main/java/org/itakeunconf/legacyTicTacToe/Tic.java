@@ -10,8 +10,8 @@ public class Tic {
     char[] tab = new char[10];
     Scanner scanner;
 
-    public Tic() {
-        scanner = new Scanner(System.in);
+    public Tic(Scanner scanner) {
+        this.scanner = scanner;
     }
 
     void choice() throws IOException {
