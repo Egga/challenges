@@ -15,4 +15,8 @@ public class UserInputService {
     int nextInt() {
         return getScanner().nextInt();
     }
+
+    void nextLine() {
+        getScanner().nextLine();
+    }
 }

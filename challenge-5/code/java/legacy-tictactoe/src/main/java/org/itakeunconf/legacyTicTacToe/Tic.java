@@ -25,12 +25,12 @@ public class Tic {
                 if (i % 2 != 0) {
                     System.out.print("player A:");
                     a = userInputService.nextInt();
-                    userInputService.getScanner().nextLine();
+                    userInputService.nextLine();
                     tab[a] = 'x';
                 } else {
                     System.out.print("player B:");
                     a = userInputService.nextInt();
-                    userInputService.getScanner().nextLine();
+                    userInputService.nextLine();
                     tab[a] = 'o';
                 }
             }
@@ -41,12 +41,12 @@ public class Tic {
                 if (i % 2 != 0) {
                     System.out.print("player B:");
                     a = userInputService.nextInt();
-                    userInputService.getScanner().nextLine();
+                    userInputService.nextLine();
                     tab[a] = 'o';
                 } else {
                     System.out.print("player A:");
                     a = userInputService.nextInt();
-                    userInputService.getScanner().nextLine();
+                    userInputService.nextLine();
                     tab[a] = 'x';
                 }
             }
