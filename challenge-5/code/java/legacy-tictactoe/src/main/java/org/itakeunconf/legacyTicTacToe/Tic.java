@@ -6,9 +6,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Tic {
+    private final UserInputService userInputService = new UserInputService();
     int i, a;
     char[] tab = new char[10];
-    private Scanner scanner;
 
     public Tic(Scanner scanner) {
         this.setScanner(scanner);
@@ -24,13 +24,13 @@ public class Tic {
             for (i = 1; i <= 9; i++) {
                 if (i % 2 != 0) {
                     System.out.print("player A:");
-                    a = getScanner().nextInt();
-                    getScanner().nextLine();
+                    a = userInputService.getScanner().nextInt();
+                    userInputService.getScanner().nextLine();
                     tab[a] = 'x';
                 } else {
                     System.out.print("player B:");
-                    a = getScanner().nextInt();
-                    getScanner().nextLine();
+                    a = userInputService.getScanner().nextInt();
+                    userInputService.getScanner().nextLine();
                     tab[a] = 'o';
                 }
             }
@@ -40,13 +40,13 @@ public class Tic {
             for (i = 1; i <= 9; i++) {
                 if (i % 2 != 0) {
                     System.out.print("player B:");
-                    a = getScanner().nextInt();
-                    getScanner().nextLine();
+                    a = userInputService.getScanner().nextInt();
+                    userInputService.getScanner().nextLine();
                     tab[a] = 'o';
                 } else {
                     System.out.print("player A:");
-                    a = getScanner().nextInt();
-                    getScanner().nextLine();
+                    a = userInputService.getScanner().nextInt();
+                    userInputService.getScanner().nextLine();
                     tab[a] = 'x';
                 }
             }
@@ -79,10 +79,10 @@ public class Tic {
     }
 
     public Scanner getScanner() {
-        return scanner;
+        return userInputService.getScanner();
     }
 
     public void setScanner(Scanner scanner) {
-        this.scanner = scanner;
+        this.userInputService.scanner = scanner;
     }
 }
