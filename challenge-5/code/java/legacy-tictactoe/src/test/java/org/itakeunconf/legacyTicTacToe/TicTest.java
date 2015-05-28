@@ -35,7 +35,11 @@ public class TicTest {
         beginWithPlayerA();
         makeMoves(1, 2, 3, 4, 5, 6, 7, 8, 9);
         tic.eval();
-        assertThat(getGameResult()).isEqualTo(STUPID_INVISIBLE_CHARACTER_AT_BEGINNING_OF_STRING + "xoxoxoxox");
+        assertGameResultEquals("xoxoxoxox");
+    }
+
+    private void assertGameResultEquals(String xoxoxoxox) {
+        assertThat(getGameResult()).isEqualTo(STUPID_INVISIBLE_CHARACTER_AT_BEGINNING_OF_STRING + xoxoxoxox);
     }
 
     @Test
@@ -43,7 +47,15 @@ public class TicTest {
         beginWithPlayerB();
         makeMoves(1, 2, 3, 4, 5, 6, 7, 8, 9);
         tic.eval();
-        assertThat(getGameResult()).isEqualTo(STUPID_INVISIBLE_CHARACTER_AT_BEGINNING_OF_STRING + "oxoxoxoxo");
+        assertGameResultEquals("oxoxoxoxo");
+    }
+
+    @Test
+    public void test_three() throws IOException {
+        beginWithPlayerB();
+        makeMoves(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        tic.eval();
+        assertGameResultEquals("oxoxoxoxo");
     }
 
 
