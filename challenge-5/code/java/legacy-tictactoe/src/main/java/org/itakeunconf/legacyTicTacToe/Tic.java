@@ -11,7 +11,7 @@ public class Tic {
     char[] tab = new char[10];
 
     public Tic(Scanner scanner) {
-        this.setScanner(scanner);
+        this.userInputService.setScanner(scanner, this);
     }
 
     void choice() throws IOException {
@@ -78,7 +78,4 @@ public class Tic {
             System.out.println("\nthe winner is : player B\n");
     }
 
-    public void setScanner(Scanner scanner) {
-        this.userInputService.scanner = scanner;
-    }
 }

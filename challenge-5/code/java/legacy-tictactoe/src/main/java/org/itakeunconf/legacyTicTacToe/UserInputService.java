@@ -19,4 +19,8 @@ public class UserInputService {
     void nextLine() {
         getScanner().nextLine();
     }
+
+    public void setScanner(Scanner scanner, Tic tic) {
+        this.scanner = scanner;
+    }
 }
