@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class UserInputService {
     Scanner scanner;
 
-    public UserInputService() {
+    public UserInputService(Scanner scanner) {
+        this.scanner = scanner;
     }
 
     public Scanner getScanner() {
@@ -18,9 +19,5 @@ public class UserInputService {
 
     void nextLine() {
         getScanner().nextLine();
-    }
-
-    public void setScanner(Scanner scanner, Tic tic) {
-        this.scanner = scanner;
     }
 }

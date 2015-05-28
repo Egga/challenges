@@ -6,12 +6,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Tic {
-    private final UserInputService userInputService = new UserInputService();
+    private final UserInputService userInputService;
     int i, a;
     char[] tab = new char[10];
 
-    public Tic(Scanner scanner) {
-        this.userInputService.setScanner(scanner, this);
+    public Tic(UserInputService userInputService) {
+        this.userInputService = userInputService;
     }
 
     void choice() throws IOException {

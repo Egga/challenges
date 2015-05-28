@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Tic tic = new Tic(new Scanner(System.in));
+        Tic tic = new Tic(new UserInputService(new Scanner(System.in)));
         try {
             tic.eval();
             for (int i = 1; i <= 9; i++) {
@@ -13,7 +13,7 @@ public class Main {
                 if (i == 3 || i == 6 || i == 9)
                     System.out.print("\n");
             }
-        } catch (IOException exc){
+        } catch (IOException exc) {
             exc.printStackTrace();
         }
     }
