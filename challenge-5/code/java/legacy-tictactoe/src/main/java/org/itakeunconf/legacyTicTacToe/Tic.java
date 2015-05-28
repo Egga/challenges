@@ -78,10 +78,6 @@ public class Tic {
             System.out.println("\nthe winner is : player B\n");
     }
 
-    public Scanner getScanner() {
-        return userInputService.getScanner();
-    }
-
     public void setScanner(Scanner scanner) {
         this.userInputService.scanner = scanner;
     }
